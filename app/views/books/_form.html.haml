@@ -4,7 +4,7 @@
     .column
       = f.input :title
     .column
-      = f.association :authors, collection: Author.none, label_method: :full_name, input_html: {class: 'search'}
+      = f.association :authors, collection: @book.authors, label_method: :full_name, input_html: {class: 'search'}
   = f.input :summary
   = f.input :available
 
