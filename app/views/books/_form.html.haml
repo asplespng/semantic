@@ -1,0 +1,11 @@
+= simple_form_for(@book) do |f|
+  = f.error_notification
+  .ui.stackable.two.column.grid
+    .column
+      = f.input :title
+    .column
+      = f.association :authors, collection: Author.none, label_method: :full_name, input_html: {class: 'search'}
+  = f.input :summary
+  = f.input :available
+
+  = f.button :submit

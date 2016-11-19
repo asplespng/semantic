@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Authosr:
+  = @book.authors.map(&:full_name).join(', ') if @book.authors.present?
+%p
+  %b Title:
+  = @book.title
+%p
+  %b Summary:
+  = @book.summary
+
+= link_to 'Edit', edit_book_path(@book)
+\|
+= link_to 'Back', books_path
